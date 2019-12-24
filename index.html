@@ -1,229 +1,1836 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LandingPage</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 4.0.0 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <!-- My style -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/media.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-</head>
-<body class="">
-    <section class="section_header">
-        <header>
-            <div class="container">
-                <nav class="navbar navbar-toggleable-md navbar-transparent bg-faded">
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">ChatApp</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trading platfrom by Company Name</title>
+    <meta name="description" content="Trading platform made by traders and for traders." />
+    <meta name="google-site-verification" content="9mhlGc8xwQ5qo5w4JHb5JrRcnKppYuVUHVIigIh1A7g" /> 
+    <!-- Links -->
+    <link rel="stylesheet" href="assets/bootstrap-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/bootstrap-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-dist/css/bootstrap-grid.css">
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Feature</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="#">How it Work</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Download</a>
-                            </li>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                            <a href="#" class="search-btn"><span class="icon-search"></span></a>
-                        </form>
-                        <div class="search-area">                       
-                            <div class="search-inner d-flex align-items-center justify-content-center">
-                                <a href='#' class="close-btn">Close <span class="icon-times"></span></a>
-                                <form class="search-form">
-                                    <div class="form-group">
-                                        <input type="search" placeholder="What are you searching for...">
-                                        <button type="submit" class="submit">Search</button>
-                                    </div>
-                                </form>
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/timeline.css">
+    <link rel="stylesheet" href="assets/css/calendar.css">
+    <link rel="stylesheet" href="assets/css/blob.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+
+    <link rel="icon" href="assets/img/favicon.ico" sizes="32x32">
+	<link rel="icon" href="assets/img/favicon.ico" sizes="192x192">
+	<link rel="apple-touch-icon-precomposed" href="assets/img/favicon.ico">
+
+    <meta name="msapplication-TileImage" content="assets/img/favicon.ico">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84214069-2"></script>;
+    
+      
+    
+    <style type="text/css">
+		.ovewrlay{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			z-index: 999999;
+			position: fixed;
+			top: 0;
+			left:0;
+		}
+		.ovewrlay{
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			background: #fff;
+		}
+		.loader {
+			position: relative;
+			margin: 75px auto;
+			width: 150px;
+			height: 150px;
+			display: block;
+			overflow: hidden;
+		}
+		.loader div {
+			height: 100%;
+		}
+		/*loader 3  */
+		.loader3, .loader3 div {
+			border-radius: 50%;
+			padding: 8px;
+			border: 2px solid transparent;
+			-webkit-animation: rotate linear 5s infinite;
+			animation: rotate linear 5s infinite;
+			border-top-color: #b83ba0;
+			border-left-color: #7a74cf;
+			-webkit-animation-timing-function: cubic-bezier(0.55, 0.38, 0.21, 0.88);
+			animation-timing-function: cubic-bezier(0.55, 0.38, 0.21, 0.88);
+			-webkit-animation-duration: 3s;
+			animation-duration: 3s;
+		}
+		.loader, .loader * {
+			will-change: transform;
+		}
+		@-webkit-keyframes rotate {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			50% {
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+		@keyframes rotate {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+			50% {
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+		@-webkit-keyframes rotate2 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+				border-top-color: #4B7E8F;
+			}
+			50% {
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+				border-top-color: #707ACF;
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+				border-top-color: #4B7E8F;
+			}
+		}
+		@keyframes rotate2 {
+			0% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+				border-top-color: #4B7E8F;
+			}
+			50% {
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+				border-top-color: #707ACF;
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+				border-top-color: #4B7E8F;
+			}
+		}
+		* {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+	</style>
+</head>
+<body id='body'>
+    <!-- Loader -->
+    <!-- <div class="ovewrlay" id="preloader">
+        <div class="loader loader3">
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div></div>
                             </div>
                         </div>
                     </div>
-                </nav>
-            </div>
-        </header>
-        <div class="container">
-            <div class="row header_h">
-                <div class="col-7">
-                    <h1>New Era of Messaging</br>
-                        Secure System Messaging</h1>
-                    <h3>Chat app messaging and powerful than any other 
-                        application. you can enjoy free call and free chat
-                        anytime and forever</h3>
-                    <div class="get_in d-flex align-items-center ">
-                        <img src="assets/img/google-play-badge.png" alt="">
-                        <img src="assets/img/app-store-badge.png" alt="">
-                    </div>
-                </div>
-                <div class="col-5 d-flex justify-content-end">
-                    <img src="assets/img/iphone.png">
                 </div>
             </div>
         </div>
-    </section>
+    </div> -->
+    <!-- Loader -->
 
-    <section class="feature">
-        <div class="container">
-                <h1>Feature</h1>
-            <div class="row">
-                <div class="col-4 text-center">
-                    <img src="assets/img/image-1.png">
-                    <h3>Privacy</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor</p>
-                </div>
-                <div class="col-4 text-center">
-                    <img src="assets/img/image-2.png">
-                    <h3>Secure</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor</p>
-                </div>
-                <div class="col-4 text-center">
-                    <img src="assets/img/image-3.png">
-                    <h3>Connect</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor</p>
-                </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand"  target="_blank" href="#">
+                <img src="assets/img/companyname-logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item ">
+                  <a class="nav-link" href="#offer">Offer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#process">Product process</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#trading">Trading platform</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#whatdoes">What does the platform</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#crm">CRM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#whatdoescrm">What does the CRM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacts">Contacts</a>
+                </li>
+              </ul>
             </div>
-        </div>
-    </section>
-
-    <section class="howitwork">
-        <div class="container">
-            <h1>How it Work</h1>
-            <div class="row">
-                <div class="col-7">
-                    <div class="row row_inset">
-                        <div class="col-6">
-                            <img src="assets/img/chat.png" alt="">
-                            <h4>Chat</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                        <div class="col-6">
-                            <img src="assets/img/cloud.png" alt="">
-                            <h4>Cloud System</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <img src="assets/img/people.png" alt="">
-                            <h4>Connect Friend</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                        <div class="col-6">
-                            <img src="assets/img/padlock.png" alt="">
-                            <h4>Privacy</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5 text-right">
-                    <img src="assets/img/iphone2.png">
-                    <div class="animate ">
-                        <img src="assets/img/player.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="download">
-        <div class="container">
-            <div class="row">
-                <div class="col-5">
-                    <img src="assets/img/iphone-3.png">
-                </div>
-                <div class="col-7">
-                    <h1 class="text-left">Download the App</h1>
-                    <h3>Our app is available for ios and android download now enjoy chat your friend anytime</h3>
-                    <div class="get_in d-flex align-items-center ">
-                        <img src="assets/img/app-store-badge.png" alt="">
-                        <img src="assets/img/google-play-badge.png" alt="">
-                    </div>
-                </div>         
-            </div>
-        </div>
-    </section>  
+        </nav>
+    </header>
     
-    <section class="sponsors">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-3">
-                    <img src="assets/img/3.png">
+    <main role="main">
+
+        <section class="cloud" id="cloud">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-6">
+                            <h1>
+                                One and only trading 
+                                solution <span>Cloud Platform</span>   
+                            </h1>
+                            <p>Develpoed by traders for traders. 
+                                Claim 20 000 EURO discount and check it for your firm</p>
+                            <div class="buttons d-flex">
+                                <button type="button" class="ml-0 btn btn-gradient b24-web-form-popup-btn-13">request demo</button>
+                                <button type="button" class="mr-0 btn btn-border-gradient"  data-toggle="modal" data-target="#discounts"><span>read about discounts</span></button>
+                            </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6 d-flex align-items-center">
+                        <img src="assets/img/cloud.svg" alt="">
+                    </div>
                 </div>
-                <div class="col-3">
-                    <img src="assets/img/2.png">
+            </div>
+        </section>
+
+        <section class="offer" id='offer'>
+
+            <svg class="blobLeft" viewbox="0 0 100 100">
+                <filter id='goos'>
+                    <fegaussianblur in='SourceGraphic' result='blur' stddeviation='4'></fegaussianblur>
+                    <fecolormatrix in='blur' mode='matrix' result='goos' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7'></fecolormatrix>
+                  </filter>
+                </defs>
+                <g filter="url(#goos)">
+                  <circle cx=35 cy=35 r=12>
+                    <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                      type="rotate" 
+                      from="0 60 50"
+                      to="360 50 50"
+                      dur="8s" />
+                    <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                      values="#6890d9; #7d6ccc; #6890d9"
+                              keyTimes="0; 0.5; 1"
+                      dur="6s" />
+                  </circle>
+                  <circle cx=40 cy=35 r=12>
+                    <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                      type="rotate" 
+                      dur="6s"
+                      from="0 60 50"
+                      to="-360 50 50" />
+                    <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                      values="#6890d9; #7d6ccc; #6890d9"
+                      keyTimes="0; 0.5; 1"
+                      dur="8s" />
+                  </circle>
+                  <circle cx=45 cy=45 r=25>
+                    <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                      dur="4s"
+                      from="0 50 50"
+                      to="360 50 50"
+                      type="rotate" />
+                    <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                      values="#6890d9; #7d6ccc; #6890d9"
+                              keyTimes="0; 0.5; 1"
+                      dur="6s" />
+                  </circle>
+                  <circle cx=30 cy=60 r=20>
+                    <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                      dur="10s"
+                      from="0 50 50"
+                      to="-360 50 50"
+                      type="rotate" />
+                    <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                      values="#6890d9; #7d6ccc; #6890d9"
+                              keyTimes="0; 0.5; 1"
+                      dur="9s" />
+                  </circle>
+                  <circle cx=60 cy=40 r=15>
+                    <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                      dur="8s"
+                      from="0 40 40"
+                      to="360 40 40"
+                      type="rotate" />
+                    <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                      values="#6890d9; #7d6ccc; #6890d9"
+                              keyTimes="0; 0.5; 1"
+                      dur="7s" />
+                  </circle>
+                </g>
+            </svg>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <h2>What do we offer</h2>
+                    <div class="col-12 col-lg-12 col-xl-3 col-md-12">
+                        <div class="box">
+                            <div class="header-box">
+                                <h3>CLOUD-BASED <br>
+                                        SOLUTION</h3>
+                            </div>
+                            <div class="body-box">
+                                <p>Using cloud-based technology, we have created 
+                                        a large-scale platform.
+                                        With our functionality, 
+                                        the platform will cover the Forex market, 
+                                        cryptocurrency space and is ready for any 
+                                        scaling format.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-12 col-xl-6 col-md-12 align-items-center">
+                        <div class="row">
+                            <div class="col-12 col-lg-12 col-xl-6 col-md-12">
+                                <div class="box">
+                                    <div class="header-box">
+                                        <h3>MULTI-MARKET <br> POTENCIAL</h3>
+                                    </div>
+                                    <div class="body-box">
+                                        <p>Direct exchange, market exchange and social exchange. 
+                                                All this can and will be 
+                                                possible in a single management system.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-12 col-xl-6 col-md-12">
+                                <div class="box">
+                                    <div class="header-box">
+                                        <h3>COMPLETE <br> INFRASTRUCTURE</h3>
+                                    </div>
+                                    <div class="body-box">
+                                        <p>Customizable frontend, backend, CRM, affiliate system
+                                                and trading terminal.
+                                                    Full customization of any part of the system, including the addition of 
+                                                new functionality.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-lg-12 col-xl-3 col-md-12">
+                        <div class="box">
+                            <div class="header-box">
+                                <h3>SHORT TERM <br> DISCOUNT</h3>
+                            </div>
+                            <div class="body-box">
+                                <p>For the first 12 customers, the price for the system will be € 15,000 (€ 35,000) 
+                                        with additional development and support benefits!
+                                        For all: One system for all market requirements!
+                                        Install in two weeks after release day or return your money.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <img src="assets/img/1.png">
+            </div>
+
+            <svg class="svgblob" id="blobR1"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="blobR1G">
+                            <stop offset="50%"  stop-color="#c30069"/>
+                            <stop offset="75%" stop-color="#a26de3"/>
+                            <stop offset="75%" stop-color="#a26de3"/>
+                    </linearGradient>
+                </defs>
+                <mask id="maskaR1">
+                    <g class="blobs_q">
+                        <circle class="blob_q" cx="450" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="470" cy="450" r="90"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="390" cy="250" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                    </g>
+                </mask>
+                <rect x="0" y="70"  mask="url(#maskaR1)" fill="url(#blobR1G)"></rect>
+            </svg>
+            <svg class="svgblob" id="blobR2"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="blobR2G">
+                            <stop offset="50%"  stop-color="#6890d9"/>
+                            <stop offset="75%" stop-color="#7d6ccc"/>
+                            <stop offset="75%" stop-color="#7d6ccc"/>
+                    </linearGradient>
+                </defs>
+                <mask id="maskaR2">
+                    <g class="blobs_q">
+                        <circle class="blob_q" cx="440" cy="250" r="50" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="450" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="340" cy="450" r="90"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="470" cy="450" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="300" cy="350" r="70"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="390" cy="250" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                    </g>
+                </mask>
+                <rect x="0" y="70"  mask="url(#maskaR2)" fill="url(#blobR2G)"></rect>
+            </svg>
+            <svg class="svgblob" id="blobR3"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="blobR3G">
+                            <stop offset="50%"  stop-color="#e46363"/>
+                            <stop offset="75%" stop-color="#ffb55e"/>
+                            <stop offset="75%" stop-color="#ffb55e"/>
+                    </linearGradient>
+                </defs>
+                <mask id="maskaR3">
+                    <g class="blobs_q">
+                        <circle class="blob_q" cx="450" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="470" cy="450" r="90"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="390" cy="250" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                    </g>
+                </mask>
+                <rect x="0" y="70"  mask="url(#maskaR3)" fill="url(#blobR3G)"></rect>
+            </svg>
+        </section>
+        
+        <section class="process" id="process">
+            <svg class="blobLeft_proc" viewbox="0 0 100 100">
+                    <filter id='goosl'>
+                        <fegaussianblur in='SourceGraphic' result='blur' stddeviation='4'></fegaussianblur>
+                        <fecolormatrix in='blur' mode='matrix' result='goosl' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7'></fecolormatrix>
+                        </filter>
+                    </defs>
+                    <g filter="url(#goosl)">
+                        <circle cx=35 cy=35 r=12>
+                        <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                            type="rotate" 
+                            from="0 60 50"
+                            to="360 50 50"
+                            dur="8s" />
+                        <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                            values="#7d6ccc; #6890d9; #7d6ccc;"
+                                    keyTimes="0; 0.5; 1"
+                            dur="6s" />
+                        </circle>
+                        <circle cx=40 cy=35 r=12>
+                        <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                            type="rotate" 
+                            dur="6s"
+                            from="0 60 50"
+                            to="-360 50 50" />
+                        <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                        values="#7d6ccc; #6890d9; #7d6ccc;"
+                            keyTimes="0; 0.5; 1"
+                            dur="8s" />
+                        </circle>
+                        <circle cx=45 cy=45 r=25>
+                        <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                            dur="4s"
+                            from="0 50 50"
+                            to="360 50 50"
+                            type="rotate" />
+                        <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                        values="#7d6ccc; #6890d9; #7d6ccc;"
+                                    keyTimes="0; 0.5; 1"
+                            dur="6s" />
+                        </circle>
+                        <circle cx=30 cy=60 r=20>
+                        <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                            dur="10s"
+                            from="0 50 50"
+                            to="-360 50 50"
+                            type="rotate" />
+                        <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                        values="#7d6ccc; #6890d9; #7d6ccc;"
+                                    keyTimes="0; 0.5; 1"
+                            dur="9s" />
+                        </circle>
+                        <circle cx=60 cy=40 r=15>
+                        <animatetransform attributename="transform" attributetype="XML" repeatcount="indefinite"
+                            dur="8s"
+                            from="0 40 40"
+                            to="360 40 40"
+                            type="rotate" />
+                        <animate attributename="fill" attributetype="XML" repeatcount="indefinite"
+                        values="#7d6ccc; #6890d9; #7d6ccc;"
+                                    keyTimes="0; 0.5; 1"
+                            dur="7s" />
+                        </circle>
+                    </g>
+            </svg>
+            <div class="container-fluid">
+                <div class="row">
+                    <h2>Product creation process</h2>
+                    <div class="col-12">
+                        <div class="timeline">
+                            <div class="flex-parent">
+                                    
+                                <div class="input-flex-container">
+                                        
+                                    <div class="hr_timeline">
+                                        <div class="line_time"></div>
+                                        <div class='inputs'>
+                                            <div class="input active">
+                                                <span data-info="may"></span>
+                                            </div>
+                                            <div class="input">
+                                                <span data-info="june"></span>
+                                            </div>
+                                            <div class="input ">
+                                                <span data-info="july"></span>
+                                            </div>
+                                            
+                                            <div class="input">
+                                                <span data-info="september"></span>
+                                            </div>
+                                            <div class="input">
+                                                <span data-info="october"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                                <div class="description-flex-container">
+                                    <div class="desc_blob"></div>
+                                    <div class="desc_card active">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h3>May</h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li>Direct crypto trading</li>
+                                                            <li>Client Cabinet</li>
+                                                            <li>Web trader</li>
+                                                            <li>Admin Cabinet</li>
+                                                            <li>Affiliate program</li>
+                                                            <li>Personal wallets</li>
+                                                            <li>Integration with encryption for liquidity</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <div class="calendar">
+                                                    <div class="header active">
+                                                        <a data-action="prev-month" title="Previous Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_left
+                                                            </i>
+                                                        </a>
+                                                        <div class="text" data-render="month-year"><span>May &nbsp; 2019</span></div>
+                                                        <a data-action="next-month"  title="Next Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_right
+                                                            </i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="months active" data-flow="left">
+                                                        <div class="month month-a" data-active="true">
+                                                            <div class="render render-a" data-date="May - 2019" data-month="2">
+                                                                <div class="table">
+                                                                    <div class="row head"><div class="cell">SU</div><div class="cell">M</div><div class="cell">TU</div><div class="cell">W</div><div class="cell">TH</div><div class="cell">F</div><div class="cell">SA</div></div>
+                                                                    <div class="row">
+                                                                        <div class="cell disable">28</div>
+                                                                        <div class="cell disable">29</div>
+                                                                        <div class="cell disable">30</div>
+                                                                        <div class="cell"><span>1</span></div>
+                                                                        <div class="cell"><span>2</span></div>
+                                                                        <div class="cell"><span>3</span></div>
+                                                                        <div class="cell"><span>4</span></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="cell"><span>5</span></div>
+                                                                        <div class="cell"><span>6</span></div>
+                                                                        <div class="cell"><span>7</span></div>
+                                                                        <div class="cell"><span>8</span></div>
+                                                                        <div class="cell"><span>9</span></div>
+                                                                        <div class="cell"><span>10</span></div>
+                                                                        <div class="cell"><span>11</span></div>
+                                                                        
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>12</span></div>
+                                                                        <div class="cell"><span>13</span></div>
+                                                                        <div class="cell active"><span>14</span></div>
+                                                                        <div class="cell"><span>15</span></div>
+                                                                        <div class="cell"><span>16</span></div>
+                                                                        <div class="cell"><span>17</span></div>
+                                                                        <div class="cell"><span>18</span></div>
+                                                                        
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>19</span></div>
+                                                                        <div class="cell"><span>20</span></div>
+                                                                        <div class="cell"><span>21</span></div>
+                                                                        <div class="cell"><span>22</span></div>
+                                                                        <div class="cell"><span>23</span></div>
+                                                                        <div class="cell"><span>24</span></div>
+                                                                        <div class="cell"><span>25</span></div>
+                                                                        
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>26</span></div>
+                                                                        <div class="cell"><span>27</span></div>
+                                                                        <div class="cell"><span>28</span></div>
+                                                                        <div class="cell "><span>29</span></div>
+                                                                        <div class="cell"><span>30</span></div>
+                                                                        <div class="cell"><span>31</span></div>
+                                                                        <div class="cell disable">1</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="month month-b" data-active="false">
+                                                            <div class="render render-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                    <div class="desc_card">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h3>June</h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li>Order execution rules service</li>
+                                                            <li>Margin Trading</li>
+                                                            <li>Social trading</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <div class="calendar">
+                                                    <div class="header active">
+                                                        <a data-action="prev-month" title="Previous Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_left
+                                                            </i>
+                                                        </a>
+                                                        <div class="text" data-render="month-year"><span>June &nbsp; 2019</span></div>
+                                                        <a data-action="next-month" title="Next Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_right
+                                                            </i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="months active" data-flow="left">
+                                                        <div class="month month-a" data-active="true">
+                                                            <div class="render render-a" data-date="June - 2019" data-month="2">
+                                                                <div class="table">
+                                                                    <div class="row head"><div class="cell">SU</div><div class="cell">M</div><div class="cell">TU</div><div class="cell">W</div><div class="cell">TH</div><div class="cell">F</div><div class="cell">SA</div></div>
+                                                                    <div class="row">
+                                                                        <div class="cell disable">26</div>
+                                                                        <div class="cell disable">27</div>
+                                                                        <div class="cell disable">28</div>
+                                                                        <div class="cell disable">29</div>
+                                                                        <div class="cell disable">30</div>
+                                                                        <div class="cell disable">31</div>
+                                                                        <div class="cell"><span>1</span></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="cell"><span>2</span></div>
+                                                                        <div class="cell"><span>3</span></div>
+                                                                        <div class="cell"><span>4</span></div>
+                                                                        <div class="cell"><span>5</span></div>
+                                                                        <div class="cell"><span>6</span></div>
+                                                                        <div class="cell"><span>7</span></div>
+                                                                        <div class="cell"><span>8</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>9</span></div>
+                                                                        <div class="cell"><span>10</span></div>
+                                                                        <div class="cell"><span>11</span></div>
+                                                                        <div class="cell"><span>12</span></div>
+                                                                        <div class="cell"><span>13</span></div>
+                                                                        <div class="cell"><span>14</span></div>
+                                                                        <div class="cell"><span>15</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell active"><span>16</span></div>
+                                                                        <div class="cell"><span>17</span></div>
+                                                                        <div class="cell"><span>18</span></div>
+                                                                        <div class="cell"><span>19</span></div>
+                                                                        <div class="cell"><span>20</span></div>
+                                                                        <div class="cell"><span>21</span></div>
+                                                                        <div class="cell"><span>22</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>23</span></div>
+                                                                        <div class="cell "><span>24</span></div>
+                                                                        <div class="cell"><span>25</span></div>
+                                                                        <div class="cell"><span>26</span></div>
+                                                                        <div class="cell"><span>27</span></div>
+                                                                        <div class="cell"><span>28</span></div>
+                                                                        <div class="cell"><span>29</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>30</span></div>
+                                                                        <div class="cell disable">1</div>
+                                                                        <div class="cell disable">2</div>
+                                                                        <div class="cell disable">3</div>
+                                                                        <div class="cell disable">4</div>
+                                                                        <div class="cell disable">5</div>
+                                                                        <div class="cell disable">6</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="month month-b" data-active="false">
+                                                            <div class="render render-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                    <div class="desc_card">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h3>July</h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li>Forex</li>
+                                                            <li>CRM system</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <div class="calendar">
+                                                    <div class="header active">
+                                                        <a data-action="prev-month" title="Previous Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_left
+                                                            </i>
+                                                        </a>
+                                                        <div class="text" data-render="month-year"><span>July &nbsp; 2019</span></div>
+                                                        <a data-action="next-month" title="Next Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_right
+                                                            </i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="months active" data-flow="left">
+                                                        <div class="month month-a" data-active="true">
+                                                            <div class="render render-a" data-date="July - 2019" data-month="2">
+                                                                <div class="table">
+                                                                    <div class="row head"><div class="cell">SU</div><div class="cell">M</div><div class="cell">TU</div><div class="cell">W</div><div class="cell">TH</div><div class="cell">F</div><div class="cell">SA</div></div>
+                                                                    <div class="row">
+                                                                        <div class="cell disable">30</div>
+                                                                        <div class="cell"><span>1</span></div>
+                                                                        <div class="cell"><span>2</span></div>
+                                                                        <div class="cell"><span>3</span></div>
+                                                                        <div class="cell"><span>4</span></div>
+                                                                        <div class="cell"><span>5</span></div>
+                                                                        <div class="cell"><span>6</span></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="cell"><span>7</span></div>
+                                                                        <div class="cell"><span>8</span></div>
+                                                                        <div class="cell"><span>9</span></div>
+                                                                        <div class="cell"><span>10</span></div>
+                                                                        <div class="cell"><span>11</span></div>
+                                                                        <div class="cell"><span>12</span></div>
+                                                                        <div class="cell"><span>13</span></div>
+                                                                    </div><div class="row">
+                                                                        
+                                                                        <div class="cell"><span>14</span></div>
+                                                                        <div class="cell"><span>15</span></div>
+                                                                        <div class="cell"><span>16</span></div>
+                                                                        <div class="cell"><span>17</span></div>
+                                                                        <div class="cell"><span>18</span></div>
+                                                                        <div class="cell"><span>19</span></div>
+                                                                        <div class="cell"><span>20</span></div>
+                                                                    </div><div class="row">
+                                                                        
+                                                                        <div class="cell active"><span>21</span></div>
+                                                                        <div class="cell"><span>22</span></div>
+                                                                        <div class="cell"><span>23</span></div>
+                                                                        <div class="cell"><span>24</span></div>
+                                                                        <div class="cell"><span>25</span></div>
+                                                                        <div class="cell"><span>26</span></div>
+                                                                        <div class="cell"><span>27</span></div>
+                                                                    </div><div class="row">
+                                                                        
+                                                                        <div class="cell"><span>28</span></div>
+                                                                        <div class="cell "><span>29</span></div>
+                                                                        <div class="cell"><span>30</span></div>
+                                                                        <div class="cell"><span>31</span></div>
+                                                                        <div class="cell disable">1</div>
+                                                                        <div class="cell disable">2</div>
+                                                                        <div class="cell disable">3</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="month month-b" data-active="false">
+                                                            <div class="render render-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="desc_card">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h3>September</h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li>Mobile terminal</li>
+                                                            <li>Binary options</li>
+                                                            <li>Automated Trading</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <div class="calendar">
+                                                    <div class="header active">
+                                                        <a data-action="prev-month" title="Previous Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_left
+                                                            </i>
+                                                        </a>
+                                                        <div class="text" data-render="month-year"><span>September &nbsp; 2019</span></div>
+                                                        <a data-action="next-month" title="Next Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_right
+                                                            </i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="months active" data-flow="left">
+                                                        <div class="month month-a" data-active="true">
+                                                            <div class="render render-a" data-month="2">
+                                                                <div class="table">
+                                                                    <div class="row head"><div class="cell">SU</div><div class="cell">M</div><div class="cell">TU</div><div class="cell">W</div><div class="cell">TH</div><div class="cell">F</div><div class="cell">SA</div></div>
+                                                                    <div class="row">
+                                                                        <div class="cell"><span>1</span></div>
+                                                                        <div class="cell"><span>2</span></div>
+                                                                        <div class="cell"><span>3</span></div>
+                                                                        <div class="cell"><span>4</span></div>
+                                                                        <div class="cell"><span>5</span></div>
+                                                                        <div class="cell"><span>6</span></div>
+                                                                        <div class="cell"><span>7</span></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="cell"><span>8</span></div>
+                                                                        <div class="cell"><span>9</span></div>
+                                                                        <div class="cell"><span>10</span></div>
+                                                                        <div class="cell"><span>11</span></div>
+                                                                        <div class="cell"><span>12</span></div>
+                                                                        <div class="cell"><span>13</span></div>
+                                                                        <div class="cell"><span>14</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>15</span></div>
+                                                                        <div class="cell"><span>16</span></div>
+                                                                        <div class="cell active"><span>17</span></div>
+                                                                        <div class="cell"><span>18</span></div>
+                                                                        <div class="cell"><span>19</span></div>
+                                                                        <div class="cell"><span>20</span></div>
+                                                                        <div class="cell"><span>21</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>22</span></div>
+                                                                        <div class="cell"><span>23</span></div>
+                                                                        <div class="cell"><span>24</span></div>
+                                                                        <div class="cell"><span>25</span></div>
+                                                                        <div class="cell "><span>26</span></div>
+                                                                        <div class="cell"><span>27</span></div>
+                                                                        <div class="cell"><span>28</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>29</span></div>
+                                                                        <div class="cell"><span>30</span></div>
+                                                                        <div class="cell disable">1</div>
+                                                                        <div class="cell disable">2</div>
+                                                                        <div class="cell disable">3</div>
+                                                                        <div class="cell disable">4</div>
+                                                                        <div class="cell disable">5</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="month month-b" data-active="false">
+                                                            <div class="render render-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+
+                                    <div class="desc_card">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h3>October</h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li>Additional improvements and enhancements.</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <div class="calendar">
+                                                    <div class="header active">
+                                                        <a data-action="prev-month" title="Previous Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_left
+                                                            </i>
+                                                        </a>
+                                                        <div class="text" data-render="month-year"><span>October &nbsp; 2019</span></div>
+                                                        <a data-action="next-month" title="Next Month">
+                                                            <i class="material-icons">
+                                                                keyboard_arrow_right
+                                                            </i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="months active" data-flow="left">
+                                                        <div class="month month-a" data-active="true">
+                                                            <div class="render render-a" data-month="2">
+                                                                <div class="table">
+                                                                    <div class="row head"><div class="cell">SU</div><div class="cell">M</div><div class="cell">TU</div><div class="cell">W</div><div class="cell">TH</div><div class="cell">F</div><div class="cell">SA</div></div>
+                                                                    <div class="row">
+                                                                        <div class="cell disable">29</div>
+                                                                        <div class="cell disable">30</div>
+                                                                        <div class="cell"><span>1</span></div>
+                                                                        <div class="cell"><span>2</span></div>
+                                                                        <div class="cell"><span>3</span></div>
+                                                                        <div class="cell"><span>4</span></div>
+                                                                        <div class="cell"><span>5</span></div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="cell"><span>6</span></div>
+                                                                        <div class="cell"><span>7</span></div>
+                                                                        <div class="cell"><span>8</span></div>
+                                                                        <div class="cell"><span>9</span></div>
+                                                                        <div class="cell"><span>10</span></div>
+                                                                        <div class="cell"><span>11</span></div>
+                                                                        <div class="cell"><span>12</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>13</span></div>
+                                                                        <div class="cell"><span>14</span></div>
+                                                                        <div class="cell active"><span>15</span></div>
+                                                                        <div class="cell"><span>16</span></div>
+                                                                        <div class="cell"><span>17</span></div>
+                                                                        <div class="cell"><span>18</span></div>
+                                                                        <div class="cell"><span>19</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>20</span></div>
+                                                                        <div class="cell"><span>21</span></div>
+                                                                        <div class="cell"><span>22</span></div>
+                                                                        <div class="cell"><span>23</span></div>
+                                                                        <div class="cell "><span>24</span></div>
+                                                                        <div class="cell"><span>25</span></div>
+                                                                        <div class="cell"><span>26</span></div>
+                                                                    </div><div class="row">
+                                                                        <div class="cell"><span>27</span></div>
+                                                                        <div class="cell"><span>28</span></div>
+                                                                        <div class="cell"><span>29</span></div>
+                                                                        <div class="cell"><span>30</span></div>
+                                                                        <div class="cell"><span>31</span></div>
+                                                                        <div class="cell disable">1</div>
+                                                                        <div class="cell disable">2</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="month month-b" data-active="false">
+                                                            <div class="render render-b"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+
+                                    <svg class="svgblob" id="blobimgw"
+                                        viewBox="0 0 600 600"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                        <defs>
+                                            <linearGradient id="MyGradientw">
+                                                    <stop offset="50%"  stop-color="#b83ba0"/>
+                                                    <stop offset="75%" stop-color="#7a74cf"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <mask id="maskaimgw">
+                                            <g class="blobs_q">
+                                                <circle class="blob_q" cx="440" cy="250" r="50" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                                <circle class="blob_q" cx="500" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                            </g>
+                                        </mask>
+                                        <rect x="0" y="70"  mask="url(#maskaimgw)" fill="url(#MyGradientw)"></rect>
+                                    </svg> 
+                                    <svg class="svgblob" id="blobimgD"
+                                        viewBox="0 0 600 600"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                        <defs>
+                                            <linearGradient id="MyGradientD">
+                                                    <stop offset="50%"  stop-color="#826dca"/>
+                                                    <stop offset="75%" stop-color="#a20095"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <mask id="maskaimgD">
+                                            <g class="blobs_q">
+                                                <circle class="blob_q" cx="440" cy="250" r="50" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                                <circle class="blob_q" cx="500" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                                <circle class="blob_q" cx="380" cy="390" r="20"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                                <circle class="blob_q" cx="470" cy="450" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                            </g>
+                                        </mask>
+                                        <rect x="0" y="70"  mask="url(#maskaimgD)" fill="url(#MyGradientD)"></rect>
+                                    </svg> 
+                                    <svg class="svgblob" id="blobimgsm"
+                                        viewBox="0 0 600 600"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                        <defs>
+                                            <linearGradient id="MyGradientsm">
+                                                    <stop offset="50%"  stop-color="#826dca"/>
+                                                    <stop offset="75%" stop-color="#a20095"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <mask id="maskaimgsm">
+                                            <g class="blobs_q">
+                                                <circle class="blob_q" cx="380" cy="390" r="20"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                                <circle class="blob_q" cx="470" cy="450" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                            </g>
+                                        </mask>
+                                        <rect x="0" y="70"  mask="url(#maskaimgsm)" fill="url(#MyGradientsm)"></rect>
+                                    </svg> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
                 </div>
-                <div class="col-3">
-                    <img src="assets/img/4.png">
+            </div>
+        </section>
+
+        <section class="trading" id="trading">
+            <div class="container">
+                <div class="row">
+                    <h2>
+                        Trading platform turnkey
+                    </h2>
+                    <div class="col-12">
+                        <p>Our product is a packaged solution for cryptocurrency operators and forex exchanges. The cloud-based modular architecture of the kernel allows you to scale and balance the system depending on the load and location.</p>
+                        <div class="imgblob">
+                            <svg class="svgblob" id="blobimg"
+                                viewBox="0 0 600 600"
+                                xmlns="http://www.w3.org/2000/svg"
+                                >
+                                <defs>
+                                    <linearGradient id="MyGradient">
+                                            <stop offset="50%"  stop-color="#826dca"/>
+                                            <stop offset="75%" stop-color="#a20095"/>
+                                    </linearGradient>
+                                </defs>
+                                <mask id="maskaimg">
+                                    <g class="blobs_q">
+                                        <circle class="blob_q" cx="440" cy="250" r="50" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="500" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="380" cy="390" r="20"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="470" cy="450" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                    </g>
+                                </mask>
+                                <rect x="0" y="70"  mask="url(#maskaimg)" fill="url(#MyGradient)"></rect>
+                            </svg> 
+                            <img src="assets/img/trading.png" alt="">
+                            <svg class="svgblob" id="blobimg3"
+                                viewBox="0 0 600 600"
+                                xmlns="http://www.w3.org/2000/svg"
+                                >
+                                
+                                <defs>
+                                    <linearGradient id="Gradient">
+                                            <stop offset="50%"  stop-color="#a26de3"/>
+                                            <stop offset="75%" stop-color="#c30069"/>
+                                    </linearGradient>
+                                </defs>
+                                <mask id="maskaimg2">
+                                    <g class="blobs_q">
+                                        <circle class="blob_q" cx="440" cy="250" r="50" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="500" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="380" cy="390" r="20"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                    </g>
+                                </mask>
+                                <rect x="0" y="70"  mask="url(#maskaimg2)" fill="url(#Gradient)"></rect>
+                            </svg> 
+                            <svg class="svgblob" id="blobimg2"
+                                viewBox="0 0 600 600"
+                                xmlns="http://www.w3.org/2000/svg"
+                                >
+                                <g transform="translate(300,300)">
+                                    <path d="M120,-157.6C152.7,-141.5,174.3,-102.6,194.8,-58.8C215.3,-14.9,234.6,33.8,228.4,80.8C222.2,127.8,190.4,173.1,148.1,184C105.8,195,52.9,171.5,-2.4,174.8C-57.8,178.2,-115.6,208.4,-137.5,190.9C-159.3,173.3,-145.3,108,-153,56.3C-160.7,4.6,-190.2,-33.4,-178.3,-54.2C-166.4,-75.1,-113.2,-78.8,-76.6,-93.6C-40,-108.3,-20,-134.2,11.9,-150.5C43.7,-166.8,87.4,-173.6,120,-157.6Z" fill="#7d6ccc" />
+                                </g>
+                            </svg>
+                        </div>
+                        
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="whatdoes" id="whatdoes">
+            <svg class="svgblob" id="blobWhat"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="WhatGradient">
+                            <stop offset="50%"  stop-color="#a20095"/>
+                            <stop offset="75%" stop-color="#826dca"/>
+                    </linearGradient>
+                </defs>
+                <mask id="maskaWhat">
+                    <g class="blobs_q">
+                        <circle class="blob_q" cx="440" cy="250" r="50" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="500" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="470" cy="450" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                    </g>
+                </mask>
+                <rect x="0" y="70"  mask="url(#maskaWhat)" fill="url(#WhatGradient)"></rect>
+            </svg>   
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-12 col-md-6 col-sm-12">
+                        <div class="row hover_card">
+                            <div class="col-12">
+                                <h2>What does the platform consist of</h2>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Payment module</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>It is possible to integrate any payment systems on request</li>
+                                            <li>Install and configure nodes</li>
+                                            <li>Connecting personal wallets</li>
+                                            <li>View the history of any financial transaction</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Auto Trading Module</h3>
+                                    </div>
+                                    <div class="card-body pb-40">
+                                        <ul>
+                                            <li>Automatic purchase / sale of cryptocurrency, virtual currencies</li>
+                                            <li>Virtual dealer + bridge</li>
+                                            <li>Setting rules for the execution of transactions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Verification</h3>
+                                    </div>
+                                    <div class="card-body pb-40">
+                                        <ul>
+                                            <li>ID confirmation</li>
+                                            <li>Install and configure document types</li>
+                                            <li>Setting restrictions for unverified users</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Flexible customization support</h3>
+                                    </div>
+                                    <div class="card-body pb-40">
+                                        <ul>
+                                            <li>Real-time communication</li>
+                                            <li>Creation of support departments</li>
+                                            <li>Create FAQ and Frequently Asked Question</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-sm-12">
+                        <div class="row hover_card">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Module integration with external services</h3>
+                                    </div>
+                                    <div class="card-body pb-40">
+                                        <ul>
+                                            <li>Integration with liquidity providers</li>
+                                            <li>Payment system integration</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Margin Trading Module</h3>
+                                    </div>
+                                    <div class="card-body pb-40">
+                                        <ul>
+                                            <li>Investment in margin trading</li>
+                                            <li>Flexible setting of shoulders, spread, swap, stop loss / take profit, deal size, step</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Social Trading Module</h3>
+                                    </div>
+                                    <div class="card-body pb-40">
+                                        <ul>
+                                            <li>PAMM system</li>
+                                            <li>COPY system</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card orange">
+                                    <div class="card-header">
+                                        <h3>Security</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Architecture that protects against hacker attacks and DDoS</li>
+                                            <li>Encryption of personal and billing user data</li>
+                                            <li>Setting up additional protection when using external services, withdrawals, trading</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Affiliate and rebate program</h3>
+                                    </div>
+                                    <div class="card-body pb-40">
+                                        <ul>
+                                            <li>Multi-level programs of any complexity</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row userclienttabs">
+                            <div class="desktop_tabs">
+                                <div class="col-12 col-md-12 col-lg-6 col-sm-12 cabinet">
+                                    <div class="usercabinet">
+                                        <h3>User Cabinet (FrontOffice)</h3>
+                                        <div class="arrowSq">
+                                            <img src="assets/img/arrow.svg" alt="">
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li>Graph with a variety of tools</li>
+                                                    <li>Market overview with a list of trading tools</li>
+                                                    <li>Lists of orders and deals</li>
+                                                    <li>Order Creation Unit</li>
+                                                    <li>Pending Orders</li>
+                                                    <li>Stop loss / Take profit</li>
+                                                    <li>Trading history</li>
+                                                    <li>Margin Trading</li>
+                                                    <li>Investment in margin trading</li>
+                                                    <li>Social Trading (PAMM, COPY)</li>
+                                                    <li>Personal profile</li>
+                                                    <li>Deposit and withdrawal history</li>
+                                                    <li>Verification</li>
+                                                    <li>Support</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="userimg">
+                                        <div class="blob-office"></div>
+                                        <h3>User Cabinet (FrontOffice)</h3>
+                                        <div>
+                                            <img src="assets/img/backoffice.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-12 col-md-12 col-lg-6 col-sm-12 backoffice">
+                                    <div class="officeimg">
+                                        <div class="blob-office"></div>
+                                        <h3>Client Cabinet (BackOffice)</h3>
+                                        <div>
+                                            <img src="assets/img/object.svg" alt="">
+                                        </div>
+                                    </div>
+    
+                                    <div class="clientcabinet">
+                                        <h3>Client Cabinet (BackOffice)</h3>
+                                        <div class="arrowSq">
+                                            <img src="assets/img/arrow.svg" alt="">
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <ul>
+                                                    <li>Setting up the market, currency pairs, commissions</li>
+                                                    <li>Setting up payment systems and crypto wallets</li>
+                                                    <li>Setting rules for work and order execution</li>
+                                                    <li>Maintenance and configuration of WL</li>
+                                                    <li>Maintenance and configuration of IB</li>
+                                                    <li>Detailed user trade statistics</li>
+                                                    <li>Setting up liquidity providers</li>
+                                                    <li>Setting up automatic trading</li>
+                                                    <li>Setting up partner systems</li>
+                                                    <li>Logging</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+
+                            <div class="mobile_tabs w-100">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="cabinet-tab" data-toggle="tab" href="#cabinet" role="tab" aria-controls="cabinet" aria-selected="true">User Cabinet (FrontOffice)</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="backoffice-tab" data-toggle="tab" href="#backoffice" role="tab" aria-controls="backoffice" aria-selected="false">Client Cabinet (BackOffice)</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="cabinet" role="tabpanel" aria-labelledby="cabinet-tab">
+                                        <div class="row cabinet">
+                                            <div class="officeimg col-md-12">
+                                                <div>
+                                                    <img src="assets/img/object.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="usercabinet col-md-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li>Graph with a variety of tools</li>
+                                                            <li>Market overview with a list of trading tools</li>
+                                                            <li>Lists of orders and deals</li>
+                                                            <li>Order Creation Unit</li>
+                                                            <li>Pending Orders</li>
+                                                            <li>Stop loss / Take profit</li>
+                                                            <li>Trading history</li>
+                                                            <li>Margin Trading</li>
+                                                            <li>Investment in margin trading</li>
+                                                            <li>Social Trading (PAMM, COPY)</li>
+                                                            <li>Personal profile</li>
+                                                            <li>Deposit and withdrawal history</li>
+                                                            <li>Verification</li>
+                                                            <li>Support</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="backoffice" role="tabpanel" aria-labelledby="backoffice-tab">
+                                        <div class="row backoffice">
+                                            <div class="userimg col-md-12">
+                                                <div>
+                                                    <img src="assets/img/backoffice.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="clientcabinet col-md-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <ul>
+                                                            <li>Setting up the market, currency pairs, commissions</li>
+                                                            <li>Setting up payment systems and crypto wallets</li>
+                                                            <li>Setting rules for work and order execution</li>
+                                                            <li>Maintenance and configuration of WL</li>
+                                                            <li>Maintenance and configuration of IB</li>
+                                                            <li>Detailed user trade statistics</li>
+                                                            <li>Setting up liquidity providers</li>
+                                                            <li>Setting up automatic trading</li>
+                                                            <li>Setting up partner systems</li>
+                                                            <li>Logging</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <svg class="svgblob" id="blobOr"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="blobOrG">
+                            <stop offset="50%"  stop-color="#e46363"/>
+                            <stop offset="75%" stop-color="#ffb55e"/>
+                            <stop offset="75%" stop-color="#ffb55e"/>
+                    </linearGradient>
+                </defs>
+                <mask id="maskaOr">
+                    <g class="blobs_q">
+                        <circle class="blob_q" cx="450" cy="320" r="30"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                    </g>
+                </mask>
+                <rect x="0" y="70"  mask="url(#maskaOr)" fill="url(#blobOrG)"></rect>
+            </svg>
+            <svg class="svgblob" id="blobW"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="GrW">
+                            <stop offset="50%"  stop-color="#c30069"/>
+                            <stop offset="75%" stop-color="#a26de3"/>
+                            <stop offset="75%" stop-color="#a26de3"/>
+                    </linearGradient>
+                </defs>
+                <mask id="maskaW">
+                    <g class="blobs_q">
+                        <circle class="blob_q" cx="320" cy="250" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="450" cy="320" r="30"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="350" cy="420" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="250" cy="370" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="470" cy="320" r="80"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="370" cy="450" r="90"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="390" cy="250" r="60"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                    </g>
+                </mask>
+                <rect x="0" y="70"  mask="url(#maskaW)" fill="url(#GrW)"></rect>
+            </svg>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" id="blobs">
+                <defs>
+                    <filter id="goob">
+                        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                        <feBlend in2="goo" in="SourceGraphic" result="mix" />
+                    </filter>
+                    <linearGradient id="blobsGradient">
+                            <stop offset="15%"  stop-color="#6d78e3"/>
+                            <stop offset="40%" stop-color="#7d6ccc"/>
+                            <stop offset="100%" stop-color="#6890d9"/>
+                    </linearGradient>
+                </defs>
+                <mask id="maskablobs">
+                    <g class="blobs_q">
+                        <circle class="blob_q" cx="440" cy="250" r="70" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="500" cy="320" r="120"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="300" cy="390" r="100"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="380" cy="390" r="140"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                        <circle class="blob_q" cx="470" cy="450" r="90"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                    </g>
+                </mask>
+                <rect x="10" y="70"  mask="url(#maskablobs)" fill="url(#blobsGradient)">
+            </svg>	
+        </section>
+
+        <section class="crm" id="crm">
+            <div class="container">
+                <div class="row">
+                    <h2>CRM (Customer Relationship Management)</h2>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7">
+                        <div class="loading_cont">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" id="loader">
+                                <defs>
+                                    <filter id="goo">
+                                        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                                        <feBlend in2="goo" in="SourceGraphic" result="mix" />
+                                    </filter>
+                                    <linearGradient id="MyGradient">
+                                            <stop offset="15%"  stop-color="#6d78e3"/>
+                                            <stop offset="40%" stop-color="#c30069"/>
+                                            <stop offset="100%" stop-color="#a26de3"/>
+                                    </linearGradient>
+                                </defs>
+                                <mask id="maska">
+                                    <g class="blobs_q">
+                                        <circle class="blob_q" cx="440" cy="250" r="150" transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="500" cy="320" r="200"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="300" cy="390" r="180"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="380" cy="390" r="220"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                        <circle class="blob_q" cx="470" cy="450" r="160"  transform="rotate(0) translate(0, 0) rotate(0)"/>
+                                    </g>
+                                </mask>
+                                <rect x="0" y="70"  mask="url(#maska)" fill="url(#MyGradient)">
+                            </svg>	
+                        </div>
+                        <img src="assets/img/crm.png" alt="">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5">
+                        <p>With the installation of a multiplatform, CRM system you get in the kit.
+                                Our CRM system is tailored to the specifics of your business, thanks to which you can increase the productivity of departments at any level, monitor and improve the efficiency of each employee, and improve the quality of interaction between the manager and the client. 
+                                With the help of modularity of the kernel, each part can be individually customized for the customer's order</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="whatdoescrm" id="whatdoescrm">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-sm-12">
+                        <div class="row hover_card desktop_btn">
+                            <div class="col-12">
+                                <h2>What does the CRM consist of</h2>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Leads</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>manual add</li>
+                                            <li>unloading from CSV</li>
+                                            <li>automatic addition (widget form, affiliate links)</li>
+                                            <li>integration with other websites or apps</li>
+                                            <li>lead status</li>
+                                            <li>lead conversion</li>
+                                            <li>reports and statistics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Support</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>Live chat</li>
+                                            <li>Ticket system</li>
+                                            <li>call</li>
+                                            <li>communication via email</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>IP Telephony</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>integration and connection of any protocol</li>
+                                            <li>generation of personal number for each manager</li>
+                                            <li>call recording</li>
+                                            <li>statistics on departments / managers</li>
+                                            <li>setup bots</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Efectiveness Metric of departments/managers</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>metrics for leads</li>
+                                            <li>metrics for customers</li>
+                                            <li>time spent on lead / customer</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 button_div">
+                                <button type="button" class="ml-0 btn btn-gradient btn-rosegr b24-web-form-popup-btn-13">request demo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-sm-12">
+                        <div class="row hover_card mobile_btn">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Clients</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>customer card</li>
+                                            <li>statuses</li>
+                                            <li>behaviors</li>
+                                            <li>trade statistics</li>
+                                            <li>activity</li>
+                                            <li>E-mail Newsletter</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Departments</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>setting up department hierarchy</li>
+                                            <li>filters for leads/customers distribution</li>
+                                            <li>access settings</li>
+                                            <li>statistics and reporting</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Tasks</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>position</li>
+                                            <li>statistics and reporting</li>
+                                            <li>tasks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card orange">
+                                    <div class="card-header">
+                                        <h3>Deals</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>shares</li>
+                                            <li>discounts</li>
+                                            <li>additional conditions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3>Managers</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+                                            <li>position</li>
+                                            <li>statistics and reporting</li>
+                                            <li>tasks</li>
+                                            <li>tracker</li>
+                                            <li>setting the distribution of leads / clients</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <section class="contacts" id='contacts'>
+        <div class="maps">
+            <iframe src="https://snazzymaps.com/embed/143640" width="100%" height="300px" style="border:none;"></iframe>
+        </div>
+        <div class="contact">
+            <div class="contact-box">
+                <ul>
+                    <li>39 Nezalezhnoi Ukrainy St,
+                            Zaporizhzhia, Ukraine</li>
+                    <li> <a href="mailto:support@Company Name.com">support@CompanyName.com</a> </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="grow">
-                    <a href="#">Company</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Career</a>
-                    <a href="#">Term &amp; Service</a>
-                    <a href="#">Our Community</a>
-                </div>
-                <div class="grow">
-                    <a href="#">Support</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Blog</a>
-                </div>
-                <div class="grow">
-                    <a href="#">Media Social</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">Google+</a>
-                </div>
-                <div class="grow">
-                    <a href="#">Address</a>
-                    <a href="#">132 Golden St, San Francisco, United States of America</a>
-                </div>
-                <div class="grow">
-                    <a href="#">CHAT APP</a>
-                    <a href="#">Copyright chatapp © 2017</a>
+    <footer>
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-4 d-flex align-items-center">
+                        <a target="_blank" href="https://Company Name.com/" class="d-flex"><img src="assets/img/companyname-logo.png" alt=""></a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 d-flex align-items-center">
+                        <p>Company Name © 2019 All rights reserved</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-4 d-flex align-items-center">
+                        <a target="_blank" href="https://www.linkedin.com/company/Company Name"><img src="assets/img/linkedin-button.svg" alt=""></a>
+                        <a target="_blank" href="https://www.facebook.com/Company Name/"><img src="assets/img/facebook-logo-button.svg" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
 
 
-<!-- jQuery 3.2.1 -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Bootstrap 4.0.0 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-<!-- FontAwesome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src='assets/js/jquery-3.3.1.min.js'></script>
+    <script src="assets/js/jquery.mousewheel.js"></script>
+    <script src="assets/js/TweenMax.min.js"></script>
+    
+    
+    <script src="assets/bootstrap-dist/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap-dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- My Scripts -->
-<script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Modal -->
+    <div class="modal fade modalDisc" id="discounts" tabindex="-1" role="dialog" aria-labelledby="discountsLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <svg class="svgblob" id="blobmodal"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="MmGradient">
+                            <stop offset="15%"  stop-color="#c30069"/>
+                            <stop offset="40%" stop-color="#c30069"/>
+                            <stop offset="100%" stop-color="#a26de3"/>
+                    </linearGradient> 
+                </defs>
+                <mask id="Mmmaska">
+                    <g transform="translate(300,300)">
+                        <path d="M120,-157.6C152.7,-141.5,174.3,-102.6,194.8,-58.8C215.3,-14.9,234.6,33.8,228.4,80.8C222.2,127.8,190.4,173.1,148.1,184C105.8,195,52.9,171.5,-2.4,174.8C-57.8,178.2,-115.6,208.4,-137.5,190.9C-159.3,173.3,-145.3,108,-153,56.3C-160.7,4.6,-190.2,-33.4,-178.3,-54.2C-166.4,-75.1,-113.2,-78.8,-76.6,-93.6C-40,-108.3,-20,-134.2,11.9,-150.5C43.7,-166.8,87.4,-173.6,120,-157.6Z" fill="#fff" />
+                    </g>
+                </mask>
+                <rect x="0" y="70"  mask="url(#Mmmaska)" fill="url(#MmGradient)"></rect>
+            </svg>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="discountsLabel">Claim 20 000 EURO discount</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="material-icons">
+                            close
+                            </i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Company Name team appreciates and value each client more than you can imagine, especially those who believe in our new product from the very beginning.</p> 
+                    <p>Long story short, each partner is very important for our company, and people who are ready to go with us from the first steps are getting the best terms of cooperation.</p>
+                    <p>One of those things we can do for our clients is to provide the best product on the market without the setup headache. You are getting a discount for the platform and 30% OFF for development costs.</p>
+                    
+                    <ul>
+                        <li>All-in-one solution. Trading platform, CRM, affiliate system and any kind of extra features you may ask for.</li>
+                        <li>No developers needed. Our team will take care of the whole platform.</li>
+                        <li>Support and any kind of extra refinement with 30% off.</li>
+                        <li>All-in-one solution that will give the best results for every cent you invest.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-gradient b24-web-form-popup-btn-13">request demo</button>
+                    <button type="button" class="btn btn-border-gradient" data-dismiss="modal"><span>сlose</span></button>
+                </div>
+            </div>
+            <svg class="svgblob" id="blobmodal2"
+                viewBox="0 0 600 600"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                <defs>
+                    <linearGradient id="MGradient">
+                            <stop offset="15%"  stop-color="#a26de3"/>
+                            <stop offset="40%" stop-color="#c30069"/>
+                            <stop offset="100%" stop-color="#c30069"/>
+                    </linearGradient> 
+                </defs>
+                <mask id="Mmaska">
+                    <g transform="translate(300,300)">
+                        <path d="M120,-157.6C152.7,-141.5,174.3,-102.6,194.8,-58.8C215.3,-14.9,234.6,33.8,228.4,80.8C222.2,127.8,190.4,173.1,148.1,184C105.8,195,52.9,171.5,-2.4,174.8C-57.8,178.2,-115.6,208.4,-137.5,190.9C-159.3,173.3,-145.3,108,-153,56.3C-160.7,4.6,-190.2,-33.4,-178.3,-54.2C-166.4,-75.1,-113.2,-78.8,-76.6,-93.6C-40,-108.3,-20,-134.2,11.9,-150.5C43.7,-166.8,87.4,-173.6,120,-157.6Z" fill="#fff" />
+                    </g>
+                </mask>
+                
+                <rect x="0" y="70"  mask="url(#Mmaska)" fill="url(#MGradient)"></rect>
+            </svg>
+        </div>
+    </div>
 </body>
-</html>
+</html>	

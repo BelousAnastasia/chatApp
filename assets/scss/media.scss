@@ -1,0 +1,247 @@
+@media (min-width: 1200px){
+    section.cloud{
+        .buttons{
+            button{
+                &.btn-gradient{
+                    padding: 19px 20px;
+                }
+                &.btn-border-gradient{
+                    > span{
+                        padding: 19px 20px;
+                    }
+                }
+            }
+        } 
+    } 
+}
+
+@media(max-width: 1200px){
+    body{
+        main{
+            section{
+                &.cloud{
+                    h1{
+                        font-size: 40px;
+                    }
+                    p{
+                        font-size: 22px;
+                    }
+                    h1, p{
+                        margin-bottom: 30px;
+                    }
+                    .row{
+                        > div:nth-of-type(1){
+                            margin-bottom: 30px;
+                        }
+                        img{
+                            max-width: 550px;
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+                &.offer{
+                    .row{
+                        > div{
+                            .box{
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+                &.crm{
+                    .loading_cont{
+                        display: none;
+                    }
+                }
+            }
+        }
+        button{
+            
+            &.btn-gradient{
+                font-size: 18px;
+            }
+            &.btn-border-gradient{
+                > span{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    
+}
+
+@media(max-width: 992px){
+    body{
+        main{
+            section{
+                padding: 70px 50px;
+                &.whatdoes{
+                    .mobile_tabs{
+                        display: block;
+                    }
+                    .userclienttabs{
+                        .desktop_tabs{
+                            display: none;
+                        }
+                    }   
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 900px) and (min-width: 768px){
+    body{
+        main{
+            section{
+                &.whatdoescrm{
+                    .hover_card{
+                        .buttons{
+                            flex-direction: column;
+                            .btn-gradient{
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        main{
+            section{
+                &.process{
+                    .calendar{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .contacts {
+            .contact{
+                right: auto;
+                bottom: 0;
+                top: auto;
+                .contact-box{
+                    padding: 15px;
+                }
+            }
+        }
+        footer{
+            .footer{
+                .row{
+                    img{
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    > div{
+                        margin-bottom: 15px;
+                        justify-content: center;
+                        &:last-of-type{
+                            margin-bottom: 0;
+                        }
+                        &:nth-of-type(3){
+                            justify-content: center;
+                        }
+                        &:first-of-type{
+                            a{
+                                text-align: center;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    p{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .modalDisc{
+            .modal-dialog{
+                .modal-content{
+                    .modal-footer{
+                        flex-direction: column;
+                        button{
+                            &:first-of-type{
+                                margin: 0 0 5px 0;
+                            }
+                            &::last-of-type{
+                                margin: 5px 0 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}
+@media(max-width: 605px){
+    body{
+        main{
+            section{
+                &.process{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media( max-width: 576px ){
+    body{
+        main{
+            section{
+                &.cloud{
+                    padding: 70px 50px;
+                    .buttons{
+                        flex-direction: column;
+                        button{
+                            margin: 0;
+                            &:nth-of-type(1){
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+                &.whatdoescrm{
+                    .hover_card{
+                        .buttons{
+                            flex-direction: column;
+                            .btn-gradient{
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+@media(max-width: 425px){
+    body{
+        main{
+            section{
+                padding: 30px 20px;
+            }
+        }
+    }
+}
+
+@media(min-width: 576px){
+    body{
+        .modalDisc{
+            .modal-dialog{
+                max-width: 600px;
+                margin: 60px auto;
+            }
+        }
+    }
+}
